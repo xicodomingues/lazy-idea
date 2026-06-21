@@ -12,6 +12,7 @@ I want my LazyVim/Neovim workflow to feel like home in JetBrains WebStorm (and t
 ## Capabilities
 
 ### New Capabilities
+
 - `personal-keymap-overrides`: the set of keybindings and editor options that diverge from upstream lazy-idea to match my Neovim configuration.
 - `verified-ide-actions`: the requirement that every IDE-action mapping resolves to a real Action ID in the target JetBrains IDE, with a documented verification method.
 - `unsupported-behavior-documentation`: an explicit, in-repo record of Neovim behaviors that cannot be reproduced in IdeaVim and the reason for each.

@@ -9,12 +9,14 @@ Decision already taken with the user: **all changes live in the fork** (not in a
 ## Goals / Non-Goals
 
 **Goals:**
+
 - Match my Neovim options and key customizations directly in the fork's module files.
 - Ensure every `<Action>(...)` mapping resolves in WebStorm (empirically verified, not assumed).
 - Document, in-repo, the Neovim behaviors that cannot be reproduced.
 - Keep the fork's diff against upstream small so future `upstream` syncs stay easy.
 
 **Non-Goals:**
+
 - Wiring chezmoi externals or cloning into `~/.config/ideavim/` (separate task).
 - Reproducing Clojure/paredit, granular insert-mode undo, or flash Colemak labels (no equivalent).
 - Re-architecting upstream's module layout.

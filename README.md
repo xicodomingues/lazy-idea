@@ -18,13 +18,13 @@ Optional plugins from the [JetBrains Marketplace](https://plugins.jetbrains.com)
 
 Clone the repository to `~/.lazy-idea`:
 
-**Unix/Linux/macOS**
+### Unix/Linux/macOS
 
 ```bash
 git clone https://github.com/cufarvid/lazy-idea.git ~/.lazy-idea
 ```
 
-**Windows (PowerShell)**
+### Windows (PowerShell)
 
 ```powershell
 git clone https://github.com/cufarvid/lazy-idea.git "$HOME/.lazy-idea"
