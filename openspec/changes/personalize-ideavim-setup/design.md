@@ -49,6 +49,20 @@ Rationale: small, well-marked diffs (section comments, a `MY-CHANGES.md`) make `
 
 Rollback: `git revert` the personal commits, or `git reset` to the upstream-synced point; the fork's `upstream` remote always provides a clean baseline.
 
+## Verification feasibility
+
+No headless or CLI harness exists for an end-user IdeaVim config — the config is interpreted by the running IDE, so the IDE is the only ground truth. Built-in verification, all requiring the IDE open with the config loaded:
+
+- `:actionlist [pattern]` — confirms an `<Action>(id)` resolves to a real action in *this* IDE/version.
+- `:set trackactionids` (or "IdeaVim: Track Action Ids") — shows which action a key fired; confirms a mapping triggers the intended action.
+- `:map` — confirms the config sourced and the key is bound.
+
+**Keystroke automation rejected.** Driving keys via macOS `osascript`/System Events is possible, but confirming an effect still routes through the IDE's action-id popup — it adds fragility without removing the manual observation step.
+
+**Plugins are scriptable.** `webstorm installPlugins IdeaVIM org.jetbrains.IdeaVim-EasyMotion AceJump eu.theblob42.idea.whichkey` (xmlIds, verified against the Marketplace API) via the Toolbox launcher (`~/Library/Application Support/JetBrains/Toolbox/scripts/webstorm`, not on PATH; IDE must be closed; the launcher wraps `open -na --args`, so confirm it runs headless and exits before scripting it). Verified locally: WebStorm 2026.1.3 installed, none of these plugins present yet, no `~/.ideavimrc`, fork not deployed — the runtime chain is greenfield.
+
+**One automatable check covers the highest risk (dead Action IDs) without keystrokes:** run `:actionlist` once and save it, then grep every `<Action>(id)` from `modules/` and assert each ID appears in the saved list. The behavioral bits (`scrolloff`, `U`, `-`/`'`, line-move) stay a short manual Track-Ids pass — the design's chosen method.
+
 ## Open Questions
 
 - Keep vim-style `<C-hjkl>` split navigation, or rely on WebStorm's native split focus? (Resolve during in-IDE verification.)

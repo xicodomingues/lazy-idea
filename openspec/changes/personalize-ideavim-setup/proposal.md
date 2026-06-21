@@ -5,7 +5,7 @@ I want my LazyVim/Neovim workflow to feel like home in JetBrains WebStorm (and t
 ## What Changes
 
 - **Personalize core options** in `modules/settings.vim` to match my `~/.config/nvim`: `maplocalleader="+"` (upstream uses `\`), `scrolloff=10` (upstream uses 4), and add `whichwrap`, `ideajoin`, `ideamarks`, and `clipboard+=ideaput`.
-- **Personalize keymaps**: `U` → redo (`<C-r>`); line-move on `<A-Up>`/`<A-Down>` (upstream uses `<A-j>`/`<A-k>`) in normal/visual/insert; add `<leader>r` → Run (my `code_runner` binding). **BREAKING** for upstream parity: line-move keys change from `<A-j>/<A-k>` to `<A-Up>/<A-Down>`.
+- **Personalize keymaps**: `U` → redo (`<C-r>`); line-move on `<A-Up>`/`<A-Down>` added alongside upstream's `<A-j>`/`<A-k>` (both fire the same action) in normal/visual/insert; add `<leader>r` → Run (my `code_runner` binding); remap `-`→`[` and `'`→`]` (normal mode) for bracket-layer-free motion prefixes.
 - **Fix unverified Action IDs**: empirically verify each `<Action>(...)` mapping in WebStorm using IdeaVim's "Track Action Ids" toggle and correct the ones that don't resolve (candidates flagged in research: `<leader>sw`, `Git.Branches`, hunk markers, inlay-hints, `QuickChangeScheme`).
 - **Document intentional gaps**: behaviors from my nvim config with no IdeaVim equivalent (granular insert-mode undo points, flash Colemak labels, Clojure/paredit, conform formatters, rainbow-delimiters, transparency) recorded so future-me knows what is deliberately absent and why.
 

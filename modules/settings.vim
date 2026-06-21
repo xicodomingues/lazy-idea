@@ -4,7 +4,7 @@
 " https://www.lazyvim.org/configuration/general
 
 let mapleader=" "
-let maplocalleader="\\"
+let maplocalleader="+"
 
 " IDE detection (used by modules with IDE-specific mappings)
 let g:is_ide_rider = &ide == 'JetBrains Rider'
@@ -15,7 +15,9 @@ set number
 " Relative line numbers
 set relativenumber
 " Lines of context
-set scrolloff=4
+set scrolloff=10
+" Allow these keys to move the cursor across line boundaries
+set whichwrap=b,s,h,l,<,>,[,]
 " Highlight matches with last search pattern
 set hlsearch
 " Show where search pattern typed so far matches
@@ -36,6 +38,12 @@ set undolevels=10000
 set nowrap
 " Enable copy/paste to/from system keyboard
 set clipboard+=unnamedplus
+" Let IdeaVim put text via the IDE's paste (preserves multi-caret/formatting)
+set clipboard+=ideaput
+
+" IdeaVim integration: smart line join, and sync vim marks with IDE bookmarks
+set ideajoin
+set ideamarks
 
 " ========================================
 " Neovim Compatibility Settings

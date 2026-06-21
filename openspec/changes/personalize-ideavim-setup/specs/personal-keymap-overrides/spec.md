@@ -35,7 +35,7 @@ The configuration SHALL map `U` in normal mode to redo (`<C-r>`).
 
 ### Requirement: Alt-arrow keys move lines
 
-The configuration SHALL move the current line or selection down on `<A-Down>` and up on `<A-Up>` in normal, visual, and insert modes, replacing upstream's `<A-j>`/`<A-k>` line-move bindings.
+The configuration SHALL move the current line or selection down on `<A-Down>` and up on `<A-Up>` in normal, visual, and insert modes, mapped alongside upstream's `<A-j>`/`<A-k>` so both key pairs trigger the same line move.
 
 #### Scenario: Move line down in normal mode
 
@@ -55,3 +55,12 @@ The configuration SHALL map `<leader>r` to the IDE Run action, matching my Neovi
 
 - **WHEN** the user presses `<leader>r` in normal mode
 - **THEN** the IDE executes the current run configuration
+
+### Requirement: Dash and quote reach the bracket motion prefixes
+
+The configuration SHALL recursively remap `-` to `[` and `'` to `]` in normal mode, so the `]`/`[` motion prefixes are reachable without the bracket layer, matching my Neovim config.
+
+#### Scenario: Dash triggers a previous-motion
+
+- **WHEN** the user presses `-` followed by a `[`-prefixed motion key in normal mode
+- **THEN** the corresponding `[` motion fires (e.g. `-d` jumps to the previous diagnostic)

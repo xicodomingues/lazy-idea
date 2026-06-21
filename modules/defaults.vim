@@ -12,6 +12,8 @@ inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
 " Q remapped to repeat last macro
 nnoremap Q @@
+" U remapped to redo (matches my Neovim config)
+nnoremap U <C-r>
 
 " Keep selection active after indenting in visual mode
 vnoremap > >gv
@@ -63,3 +65,7 @@ nmap <leader>e :NERDTreeToggle<cr>
 
 let g:WhichKeyDesc_explorer_cwd = "<leader>E Explorer NeoTree (cwd)"
 nmap <leader>E :NERDTreeFind<cr>
+
+" Run (matches my Neovim code_runner <leader>r binding)
+let g:WhichKeyDesc_run = "<leader>r Run"
+nmap <leader>r <Action>(Run)

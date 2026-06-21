@@ -61,6 +61,26 @@ nmap <A-k> <Action>(MoveLineUp)
 vmap <A-k> <Action>(MoveLineUp)
 imap <A-k> <Esc><Action>(MoveLineUp)i
 
+" <A-Down>/<A-Up> mirror <A-j>/<A-k> (my Neovim config uses the arrow keys)
+let g:WhichKeyDesc_move_down_arrow = "<A-Down> Move Down"
+nmap <A-Down> <Action>(MoveLineDown)
+vmap <A-Down> <Action>(MoveLineDown)
+imap <A-Down> <Esc><Action>(MoveLineDown)i
+
+let g:WhichKeyDesc_move_up_arrow = "<A-Up> Move Up"
+nmap <A-Up> <Action>(MoveLineUp)
+vmap <A-Up> <Action>(MoveLineUp)
+imap <A-Up> <Esc><Action>(MoveLineUp)i
+
+" ========================================
+" Motion Prefix Remaps
+" ========================================
+" Reach the ]/[ motion prefixes via - and ' (matches my Neovim config).
+" Recursive so they chain into the [b/]b, [d/]d, [t/]t maps below.
+" Normal mode only; marks move to the backtick (`) prefix.
+nmap - [
+nmap ' ]
+
 " ========================================
 " Jump Navigation
 " ========================================
