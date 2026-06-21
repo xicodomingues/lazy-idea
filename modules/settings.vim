@@ -9,6 +9,11 @@ let maplocalleader="+"
 " IDE detection (used by modules with IDE-specific mappings)
 let g:is_ide_rider = &ide == 'JetBrains Rider'
 
+" Conflict resolution: Vim wins in normal/visual; IDE keeps insert mode
+" (so completion and insert-mode IDE shortcuts still work). Covers the
+" <C-h/j/k/l> split-nav and resize-arrow conflicts globally.
+sethandler n-v:vim i:ide
+
 set formatoptions=jcroqlnt
 " Print line number
 set number
