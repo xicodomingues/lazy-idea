@@ -15,12 +15,12 @@
 
 ## 3. Verify IDE Action IDs in WebStorm
 
-- [ ] 3.1 Load the config in WebStorm and enable IdeaVim "Track Action Ids" (Search Everywhere → "IdeaVim: Track Action Ids")
-- [ ] 3.2 Verify the personal mappings resolve: `<leader>r` (Run), `<A-Up>`/`<A-Down>` (MoveLineUp/Down)
-- [ ] 3.3 Verify the research-flagged IDs resolve and fix any that don't: `<leader>sw`, `Git.Branches`, hunk markers (`VcsShowNextChangeMarker`/`VcsShowPrevChangeMarker`), inlay hints, `QuickChangeScheme`
+- [x] 3.1 Load the config in WebStorm and enable IdeaVim "Track Action Ids" — config sources cleanly (only pre-existing upstream `set` no-ops warn); `:actionlist` captured for the full sweep
+- [x] 3.2 Verify the personal mappings resolve: `<leader>r` (Run), `<A-Up>`/`<A-Down>` (MoveLineUp/Down) — all present in `:actionlist` ✓
+- [x] 3.3 Verify the research-flagged IDs and fix dead ones — flagged IDs (`Git.Branches`, hunk markers, inlay hints, `QuickChangeScheme`) all resolve; sweep found 4 **other** dead upstream IDs, all resolved: `Format`→`ReformatCode`, `ShowDocumentation`→`QuickJavaDoc`, and `<leader>dp` (`ActivateProfilerToolWindow`) + `<leader>dr` (`JShell.Console`) deleted (no WebStorm equivalent)
 - [ ] 3.4 Verify `<C-h/j/k/l>` split navigation behaves correctly with `sethandler`; decide keep-or-drop and adjust
-- [ ] 3.5 Spot-check core nav (`gd`, `gr`, `gI`) and correct any mismatches
-- [ ] 3.6 Install prerequisite plugins via CLI (IDE closed): `webstorm installPlugins IdeaVIM org.jetbrains.IdeaVim-EasyMotion AceJump eu.theblob42.idea.whichkey` (xmlIds); confirm the launcher runs headless and exits
+- [x] 3.5 Spot-check core nav (`gd`, `gr`, `gI`) — `GotoDeclaration`, `FindUsages`, `GotoImplementation` all resolve ✓
+- [x] 3.6 Install prerequisite plugins via CLI (IDE closed): `webstorm installPlugins IdeaVIM org.jetbrains.IdeaVim-EasyMotion AceJump eu.theblob42.idea.whichkey` (xmlIds) — all 4 installed headlessly, confirmed on disk
 - [x] 3.7 Save `:actionlist` output once; add a script that greps `<Action>(id)` from `modules/` and asserts each ID is present (catches dead Action IDs without keystrokes) — script added at `scripts/check-action-ids.sh` (saving the dump is the in-IDE step)
 
 ## 4. Document personal changes and gaps

@@ -41,13 +41,6 @@ nmap <leader>dO <Action>(StepOver)
 let g:WhichKeyDesc_debug_pause = "<leader>dP Pause"
 nmap <leader>dP <Action>(Pause)
 
-let g:WhichKeyDesc_debug_profiler = "<leader>dp +profiler"
-let g:WhichKeyDesc_debug_profiler_toolwindow = "<leader>dpp Profiler Tool Window"
-nmap <leader>dp <Action>(ActivateProfilerToolWindow)
-
-let g:WhichKeyDesc_debug_repl = "<leader>dr Toggle REPL"
-nmap <leader>dr <Action>(JShell.Console)
-
 let g:WhichKeyDesc_debug_session = "<leader>ds Session"
 nmap <leader>ds :echo 'Not yet implmented.'<cr>
 

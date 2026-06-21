@@ -17,8 +17,8 @@ nmap <leader>cR <Action>(RenameFile)
 if g:is_ide_rider | nmap <leader>cR <Action>(RiderRenameFile) | endif
 
 let g:WhichKeyDesc_format = "<leader>cf Format"
-nmap <leader>cf <Action>(Format)
-vmap <leader>cf <Action>(Format)
+nmap <leader>cf <Action>(ReformatCode)
+vmap <leader>cf <Action>(ReformatCode)
 
 let g:WhichKeyDesc_diagnostics_line = "<leader>cd Line Diagnostics"
 nmap <leader>cd <Action>(ActivateProblemsViewToolWindow)

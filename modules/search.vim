@@ -48,7 +48,7 @@ let g:WhichKeyDesc_search_marks = "<leader>sm Marks"
 nmap <leader>sm :marks<cr>
 
 let g:WhichKeyDesc_search_man = "<leader>sM Man Pages"
-nmap <leader>sM <Action>(ShowDocumentation)
+nmap <leader>sM <Action>(QuickJavaDoc)
 
 let g:WhichKeyDesc_search_notifications = "<leader>sn +notifications"
 let g:WhichKeyDesc_search_notifications_all = "<leader>sna All"
