@@ -81,6 +81,11 @@ imap <A-Up> <Esc><Action>(MoveLineUp)i
 nmap - [
 nmap ' ]
 
+" Swap ; and , so , repeats f/t/F/T forward (matches my Neovim config).
+" noremap = non-recursive, covers normal/visual/operator-pending.
+noremap , ;
+noremap ; ,
+
 " ========================================
 " Jump Navigation
 " ========================================
